@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	xmlns:tns="http://www.example.org/PaymentTransfer"
+	elementFormDefault="qualified">
+	
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/RARICommonOutboundFileHeader.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/RATransferPlanCategory.xsd"/>
+	<xsd:element name="raTransferReport" type="impl:RATransferReport"/>	
+	<xsd:complexType name="RATransferReport">
+		<xsd:sequence>		
+			<xsd:element name="includedFileHeader" type="vo:RARICommonOutboundFileHeader" minOccurs="1" maxOccurs="1"/>
+			
+			<xsd:element name="state" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="2"/>						 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="calendarYear" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="4"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="executionType" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="30"/>
+						<xsd:enumeration value="P"/>
+						<xsd:enumeration value="F"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>		
+		 
+			<xsd:element name="includedPlanIdentifierCategory" type="vo:RATransferPlanCategory" minOccurs="1" maxOccurs="unbounded"/>		
+		</xsd:sequence>
+	</xsd:complexType>	 
+</xsd:schema>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	xmlns:tns="http://www.example.org/PaymentTransfer"
+	elementFormDefault="qualified">
+	
+	<xsd:element name="includedPlanIdentifier" type="impl:EnrolleeClaimsSummaryPlanCategory"/>	
+	<xsd:complexType name="EnrolleeClaimsSummaryPlanCategory">
+		<xsd:sequence>
+			<xsd:element name="planIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="16"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			 
+			
+			<xsd:element name="activePlan" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="1"/>
+						<xsd:enumeration value="Y"/>
+						<xsd:enumeration value="N"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			
+			<xsd:element name="metalLevel" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="30"/>
+						<xsd:enumeration value=""/>					 
+						<xsd:enumeration value="01-Platinum"/>
+						<xsd:enumeration value="02-Gold"/>
+						<xsd:enumeration value="03-Silver"/>
+						<xsd:enumeration value="04-Bronze"/>
+						<xsd:enumeration value="05-Catastrophic"/>	
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="uniqueEnrollees" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+				 		<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+				 	</xsd:restriction>
+				 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesLinkedOnlyToRxClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+				 		<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+				 	</xsd:restriction>
+				 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesLinkedOnlyToMedicalClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+				 		<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+				 	</xsd:restriction>
+				 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesLinkedToMedicalAndRxClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+				 		<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+				 	</xsd:restriction>
+				 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesWithNoLinkedClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+				
+			<xsd:element name="activeEnrollmentPeriods" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+					
+			<xsd:element name="activeNonOrphanLinkedClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+					
+			<xsd:element name="orphanClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="orphanMedicalClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="orphanRxClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="rxClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="medicalClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="orphanRxClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="orphanMedicalClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>			
+				
+			<xsd:element name="subscriberPremiumAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>			
+ 
+			<xsd:element name="medicalClaimsFlaggedForRaSelection" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+ 			<xsd:element name="rxClaimsFlaggedForRaSelection" minOccurs="1" maxOccurs="1"> 
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>					
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:element name="includedRiskScoreDetailSubPolicyCategory" type="impl:RiskScoreDetailSubPolicyCategory"/>
+	<xsd:complexType name="RiskScoreDetailSubPolicyCategory">
+        <xsd:sequence>
+        	<xsd:element name="billableIndicator" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">						 
+						<xsd:minLength value="1"/>						 
+						<xsd:enumeration value="Y"/>
+						<xsd:enumeration value="N"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+			<xsd:element name="totalMemberMonths" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>								
+			<xsd:element name="policyStartDate" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+							 	 
+			<xsd:element name="policyEndDate" type="xsd:date" minOccurs="1" maxOccurs="1"/>	
+									 	 
+			<xsd:element name="allowableRatingFactorAge" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+			<xsd:element name="allowableRatingFactorValue" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+	    </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

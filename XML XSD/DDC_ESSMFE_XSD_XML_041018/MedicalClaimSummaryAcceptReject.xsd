@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/CommonOutboundFileHeader.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimCountMessageType.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ErrorCodeCounts.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/MedicalClaimFormTypeSummary.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/MedicalClaimIssuerSummary.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/MedicalClaimPlanSummary.xsd"/>
+	<xsd:element name="medicalClaimSummaryAcceptReject" type="impl:MedicalClaimSummaryAcceptReject" />
+	<xsd:complexType name="MedicalClaimSummaryAcceptReject">
+		<xsd:sequence>
+			<xsd:element name="includedFileHeader" type="vo:CommonOutboundFileHeader" minOccurs="1" maxOccurs="1"/>
+			
+            <xsd:element name="inboundFileHash" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+
+            <xsd:element name="detailReportHash" type="xsd:string" minOccurs="1" maxOccurs="1"/>    
+
+			<xsd:element name="claimHeaderCounts" type="vo:ClaimCountMessageType" minOccurs="1" maxOccurs="1"/>
+			
+			<xsd:element name="includedErrorCodeFrequency" type="vo:ErrorCodeCounts" minOccurs="0" maxOccurs="unbounded"/>
+			
+			<xsd:element name="claimLineCounts" type="vo:ClaimCountMessageType" minOccurs="1" maxOccurs="1"/>
+			
+			<xsd:element name="includedFormTypeSummary" type="vo:MedicalClaimFormTypeSummary" minOccurs="1" maxOccurs="2"/>
+		
+			<xsd:element name="includedIssuerSummary" type="vo:MedicalClaimIssuerSummary" minOccurs="1" maxOccurs="1"/>
+			
+			<xsd:element name="includedPlanSummary" type="vo:MedicalClaimPlanSummary" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>
+	

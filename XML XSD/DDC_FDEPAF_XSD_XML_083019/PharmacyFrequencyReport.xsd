@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"	 
+	elementFormDefault="qualified">
+	
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/RARICommonOutboundFileHeader.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/fdepaf/PharmacyFrequencyVoidReplaceCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/fdepaf/PharmacyFrequencyDerivedAmountIndicatorCategory.xsd"/>
+	<xsd:element name="pharmacyFrequencyReport" type="impl:PharmacyFrequencyReport"/>	
+	<xsd:complexType name="PharmacyFrequencyReport">
+		<xsd:sequence>		
+			<xsd:element name="includedFileHeader" type="vo:RARICommonOutboundFileHeader" minOccurs="1" maxOccurs="1"/>
+					
+			<xsd:element name="calendarYear" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="4"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalEnrolleesForAcceptedNonOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalEnrolleesForAcceptedOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+			<xsd:element name="totalAcceptedNonOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalNdcCountForNonOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalAcceptedOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalNdcCountForOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+			
+			<xsd:element name="totalAllowedCostForNonOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="2"/>						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			
+			<xsd:element name="totalPlanPaidAmountForNonOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="2"/>						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			
+			<xsd:element name="totalAllowedCostForOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="2"/>						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			
+			<xsd:element name="totalPlanPaidAmountForOrphanClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="2"/>						  
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>				 
+			
+			<xsd:element name="includedPharmacyVoidReplaceCodeCategory" type="vo:PharmacyFrequencyVoidReplaceCategory" minOccurs="2" maxOccurs="2"/>
+			<xsd:element name="includedPharmacyDerivedAmountIndicatorCategory" type="vo:PharmacyFrequencyDerivedAmountIndicatorCategory" minOccurs="2" maxOccurs="2"/>	 
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

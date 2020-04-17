@@ -1,0 +1,14 @@
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/cefr/ClaimEnrolleeFrequencyPlanCategory.xsd"/>	 
+	<xsd:element name="includedIndividualMarketTypePlanCategory" type="impl:ClaimEnrolleeFrequencyIndividualMarketTypePlanCategory"/>
+	<xsd:complexType name="ClaimEnrolleeFrequencyIndividualMarketTypePlanCategory">
+        <xsd:sequence>
+			<xsd:element name="includedPlanCategory" type="vo:ClaimEnrolleeFrequencyPlanCategory" minOccurs="1" maxOccurs="unbounded"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">	
+	<xsd:element name="includedMedicalClaimExtractServiceLine" type="impl:radvMedicalClaimExtractServiceLineCategory"/>
+	<xsd:complexType name="radvMedicalClaimExtractServiceLineCategory">
+		<xsd:sequence>			 
+			<xsd:element name="serviceLineNumber" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="1"/>
+						<xsd:maxInclusive value="999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="serviceFromDate" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="10"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+				<xsd:element name="serviceToDate" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="10"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="revenueCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="4"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="serviceTypeCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="2"/>
+						<xsd:enumeration value="01"/>
+						<xsd:enumeration value="03"/>						 	
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="serviceCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="5"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="serviceModifierCode" minOccurs="1" maxOccurs="4">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="serviceFacilityTypeCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="renderingProviderIDQualifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="2"/>
+						<xsd:enumeration value="XX"/>
+						<xsd:enumeration value="99"/>	
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="renderingProviderIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="15"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="allowedAmount" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="-9999999999999999.99"/>
+	      				<xsd:maxInclusive value="9999999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="policyPaidAmount" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="-9999999999999999.99"/>
+	      				<xsd:maxInclusive value="9999999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="derivedServiceClaimIndicator" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="1"/>
+						<xsd:enumeration value="Y"/>
+						<xsd:enumeration value="N"/>	
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>		
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

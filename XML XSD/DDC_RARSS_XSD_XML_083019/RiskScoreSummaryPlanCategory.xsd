@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryRatingAreaCategory.xsd"/>
+	
+	<xsd:element name="riskScoreSummaryPlanCategory" type="impl:RiskScoreSummaryPlanCategory"/>
+	<xsd:complexType name="RiskScoreSummaryPlanCategory">
+        <xsd:sequence>
+        	<xsd:element name="includedRatingArea" type="impl:RiskScoreSummaryRatingAreaCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="planIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="16"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+			<xsd:element name="metalLevel" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="15"/>
+						<xsd:enumeration value="01-Platinum"/>
+						<xsd:enumeration value="02-Gold"/>
+						<xsd:enumeration value="03-Silver"/>
+						<xsd:enumeration value="04-Bronze"/>
+						<xsd:enumeration value="05-Catastrophic"/>				 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+    		<xsd:element name="state"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:string">
+    		            <xsd:minLength value="0"/>
+    		            <xsd:maxLength value="2"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="market" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:string">
+    		            <xsd:minLength value="0"/>
+    		            <xsd:maxLength value="30"/>
+    		            <xsd:enumeration value=""/>
+    		            <xsd:enumeration value="1"/>
+    		            <xsd:enumeration value="2"/>    		           
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    	
+		</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
+
+

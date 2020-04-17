@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:element name="includedResolvedRejectsCategory" type="impl:ClaimResubmissionFrequencyReportResolvedRejectsCategory"/>
+	<xsd:complexType name="ClaimResubmissionFrequencyReportResolvedRejectsCategory">
+        <xsd:sequence>
+			<xsd:element name="resubmissionCount" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+			<xsd:element name="countFrequency" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+	    </xsd:sequence>
+    </xsd:complexType>
+ </xsd:schema>

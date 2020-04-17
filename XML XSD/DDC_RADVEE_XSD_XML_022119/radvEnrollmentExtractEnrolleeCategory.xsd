@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/radvee/radvEnrollmentExtractProfileCategory.xsd"/>
+	<xsd:element name="includedEnrollmentExtract" type="impl:radvEnrollmentExtractEnrolleeCategory"/>
+	<xsd:complexType name="radvEnrollmentExtractEnrolleeCategory">
+		<xsd:sequence>			 
+			<xsd:element name="insuredMemberIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="2"/>
+						<xsd:maxLength value="80"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="insuredMemberBirthDate" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="10"/>
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="insuredMemberGenderCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="1"/>
+						<xsd:enumeration value="M"/>
+						<xsd:enumeration value="F"/>
+						<xsd:enumeration value="U"/>	
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="includedInsuredMemberProfile" type="vo:radvEnrollmentExtractProfileCategory" minOccurs="1" maxOccurs="unbounded"/>		
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

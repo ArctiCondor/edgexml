@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:element name="riskScoreSummaryCsrFactorCategory" type="impl:RiskScoreSummaryCsrFactorCategory"/>
+	<xsd:complexType name="RiskScoreSummaryCsrFactorCategory">
+       <xsd:sequence>
+    		<xsd:element name="membersbyCsrFactor"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="99.99"/>
+    		       </xsd:restriction>
+    		  </xsd:simpleType>
+    	 </xsd:element>
+    	 <xsd:element name="membersbyCsrFactorCount" maxOccurs="1" minOccurs="1">
+    	     <xsd:simpleType>
+    	         <xsd:restriction base="xsd:integer">
+    	             <xsd:minInclusive value="0"/>
+    	             <xsd:maxInclusive value="999999999"/>  
+    	         </xsd:restriction>
+    	     </xsd:simpleType>
+    	 </xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

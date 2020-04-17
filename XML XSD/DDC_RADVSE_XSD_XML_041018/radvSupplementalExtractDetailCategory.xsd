@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">	
+	<xsd:element name="includedSupplementalExtractDetail" type="impl:radvSupplementalExtractDetailCategory"/>
+	<xsd:complexType name="radvSupplementalExtractDetailCategory">
+		<xsd:sequence>			 
+			<xsd:element name="insuredMemberIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="2"/>
+						<xsd:maxLength value="80"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="supplementalDiagnosisDetailRecordIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="50"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="originalClaimIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="50"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="detailRecordProcessedDateTime" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="19"/>						 					 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="addDeleteVoidCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">							 
+						<xsd:length value="1"/>		
+						<xsd:enumeration value="A"/>
+						<xsd:enumeration value="D"/>
+						<xsd:enumeration value="V"/>						 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="originalSupplementalDetailID" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="50"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="serviceFromDate" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="10"/>						 					 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="serviceToDate" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="10"/>						 					 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="diagnosisTypeCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">							 
+						<xsd:length value="2"/>		
+						<xsd:enumeration value="01"/>
+						<xsd:enumeration value="02"/>					 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="supplementalDiagnosisCode" minOccurs="1" maxOccurs="99">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="30"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="sourceCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">							 	
+						<xsd:enumeration value="MR"/>
+						<xsd:enumeration value="EDI"/>					 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">	
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryPlanDiagnosisCodeCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryPlanPaymentHccCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummarySeverityLevelCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryPlanHccGroupCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryHccInteractionCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryCsrFactorCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryHccDropCategory.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryPlanPaymentRxcCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreSummaryPlanRxcToHccInteractionCategory.xsd"/>
+    <xsd:element name="riskScoreSummaryRatingAreaCategory" type="impl:RiskScoreSummaryRatingAreaCategory"/>
+	<xsd:complexType name="RiskScoreSummaryRatingAreaCategory">	
+		<xsd:sequence>
+		<xsd:element name="ratingArea" maxOccurs="1" minOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="3"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="memberMonths" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalEnrollees" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalEnrolleeUtilizer"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalRaUtilizer" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanUtilizerRiskScore"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>   
+    		</xsd:element>
+    		<xsd:element name="totalRaPaymentHccEnrollees"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalRaPaymentRxcEnrollees"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanRiskScoreForRaPaymentHccEnrollees" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanRiskScoreForRaPaymentRxcEnrollees" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalEnrolleesWithoutRaPaymentHccs"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalEnrolleesWithoutRaPaymentRxcs"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalMeanRsEnrolleeWRaPaymentHcc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    
+    		</xsd:element>
+    		<xsd:element name="totalMeanRsEnrolleeWRaPaymentRxc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    
+    		</xsd:element>    		
+    		<xsd:element name="percentTotalRAUtilizerCSR"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="percentTotalRaPaymentRxcEnrolleeWhoCSR"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="meanRiskScoreTotalRaPaymentHccWithCSR" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanRiskScoreTotalRaPaymentRxcWithCSR" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="meanRiskScoreTotalRaPaymentHccNoCSR"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanRiskScoreRaPaymentRxcEnrolleesNoCSR"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="meanUniqueDiagnosisPerUtilizers"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanUniqueNdcPerUtilizers"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="meanUniqueDiagnosisPerRAUtilizers"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanUniqueNdcPerRAUtilizers"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="meanUniqueDiagnosisPerRAPaymentHccEnrollee" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="meanUniqueNdcPerRAPaymentRxcEnrollee" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="totalDiagnosesAccepted"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalNdcAccepted"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="totalRADiagnosesAccepted"  maxOccurs="1" minOccurs="1">
+    		     <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalRANdcAccepted" maxOccurs="1" minOccurs="1">
+    		     <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="totalConditionCategory"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalRxcs" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="totalPaymentsConditionCategories" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalPaymentRxcs" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="totalUniqueEnrolleePaymentHCCs"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>     		 	   		
+    		<xsd:element name="totalRxcToHccInteractions"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalRxcsCreatedFromSrvcCodes"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalEnrolleesWithRxcToHccInteractions"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalEnrolleesWithRxcsCreatedFromSrvcCodes"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="avgHccConditionCategoriesPerEnbyEnInfant"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>     		
+    		<xsd:element name="avgHccConditionCategoriesPerEnbyEnChild"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="avgHccsperEnrolleebyHccEnrolleesAdult"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="avgRxcsPerEnrolleebyRxcEnrolleesAdult"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="avgNumberPaymentHccsEnrolleeChild"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="avgNumberPaymentHccsEnrolleeAdult" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    		
+    		</xsd:element>
+    		<xsd:element name="avgNumberPaymentRxcsEnrolleeAdult" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:decimal">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999.99"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    		
+    		</xsd:element>    		
+    		<xsd:element name="numberRaUtiWCt1Uniquedx"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    		
+    		</xsd:element>
+    		<xsd:element name="numberRaUtiWCt1UniqueNdc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    		
+    		</xsd:element>    		
+    		<xsd:element name="numberRaUtiWCt2UniqueDx"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    		
+    		</xsd:element>
+    		<xsd:element name="numberRaUtiWCt2UniqueNdc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>    		
+    		</xsd:element>    		
+    		<xsd:element name="numberRaUtiW3To4UniqueDx"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>  
+    		<xsd:element name="numberRaUtiW3To4UniqueNdc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>     		  		
+    		<xsd:element name="numberRaUtiW5To6UniqueDX" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaUtiW5To6UniqueNdc" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		 		
+    		<xsd:element name="numberRaUtiW7To9UniqueDX"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaUtiW7To9UniqueNdc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaUtiWGreaterOrEquals10UniqueDX"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaUtiWGreaterOrEquals10UniqueNdc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>   		 
+    		<xsd:element name="numberRAUtiWCount1ConditionCategory"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRAUtiWCount1Rxc"  maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaUtilizerWCount2"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaUtilizerWCount2Rxc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    			
+    		<xsd:element name="numberRaUtilizer3To4ConditionCategory"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaUtilizer3To4Rxc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaUtiWgreaterorequals5UniqueHcc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaUtiWgreaterorequals5UniqueRxc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaPaymentHccEnrollesWithCount1"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaPaymentRxcEnrolleesWithCount1"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaPaymentHccEnrollesWithCount2"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaPaymentRxcEnrolleesWithCount2"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaPaymentHccEnrollesWithCount3To4"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaPaymentRxcEnrolleesWithCount3To4"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="numberRaPaymentHccGreaterOrEquals5UniqueHcc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="numberRaPaymentRxcGreaterOrEquals5UniqueRxc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="totalV3Indicator" maxOccurs="1" minOccurs="1">
+    		    <xsd:simpleType>
+    		    	<xsd:restriction base="xsd:integer">
+    		    	    <xsd:minInclusive value="0"/>
+    		    	    <xsd:maxInclusive value="999999999"/>
+    		    	</xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalMaleCount"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalMaleCountWithHCC"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalMaleCountWithRxc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="maleCountInfantModel"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="malesCountChildModel"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="malesCountAdultModel"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="totalCountFemale"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="femaleCountWithConditionCategoryHCC"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="femaleCountWithRxc"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>    		
+    		<xsd:element name="femaleCountInfantModel"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="femaleCountChildModel"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="femaleCountAdultModel"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="infantCount"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="childCount"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="adultCount"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge0To20"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge21"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge22"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge23"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge24"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge25"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge26"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge27"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge28"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge29"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge30"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge31"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge32"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge33"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge34"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge35"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge36"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge37"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge38"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge39"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge40"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge41"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge42"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge43"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge44"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge45"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge46"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge47"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge48"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge49"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge50"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge51"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge52"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge53"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge54"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge55"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge56"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge57"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge58"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge59"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge60"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge61"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge62"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge63"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="arfAge64AndOlder"  maxOccurs="1" minOccurs="1">
+    			<xsd:simpleType>
+    		        <xsd:restriction base="xsd:integer">
+    		            <xsd:minInclusive value="0"/>
+    		            <xsd:maxInclusive value="999999999"/>
+    		        </xsd:restriction>
+    		    </xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="crossYearEnrolleeCount" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="crossYearEnrollmentPeriodCount" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="crossYearMemberMonthCount" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+    		<xsd:element name="includedDiagnosisCodeCategory" type="vo:RiskScoreSummaryPlanDiagnosisCodeCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedPaymentHccCategory" type="vo:RiskScoreSummaryPlanPaymentHccCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedPaymentRxcCategory" type="vo:RiskScoreSummaryPlanPaymentRxcCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedSeverityLevelCategory" type="vo:RiskScoreSummarySeverityLevelCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedHccGroupCategory" type="vo:RiskScoreSummaryPlanHccGroupCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedHccInteractionCategory" type="vo:RiskScoreSummaryHccInteractionCategory" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="includedCsrFactorCategory" type="vo:RiskScoreSummaryCsrFactorCategory" minOccurs="0" maxOccurs="unbounded"/>
+		    <xsd:element name="includedHccDroppedCategory" type="vo:RiskScoreSummaryHccDropCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedRxcToHccInteractionCategory" type="vo:RiskScoreSummaryPlanRxcToHccInteractionCategory" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

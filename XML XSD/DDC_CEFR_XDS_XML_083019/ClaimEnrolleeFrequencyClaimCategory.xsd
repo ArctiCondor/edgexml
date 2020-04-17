@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/cefr/ClaimEnrolleeFrequencyFormTypeCategory.xsd"/>
+	<xsd:element name="includedClaimCategory" type="impl:ClaimEnrolleeFrequencyClaimCategory"/>
+	<xsd:complexType name="ClaimEnrolleeFrequencyClaimCategory">
+        <xsd:sequence>
+			<xsd:element name="claimType" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>	
+						<xsd:maxLength value="1"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+			
+			<xsd:element name="countofTotalActiveClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="countofTotalInactiveVoidClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalClaimRecordsAccepted" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="uniqueClaimRecordsResolved" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalClaimLinesAccepted" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalAllowedCostForRaInpatientClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		
+    		<xsd:element name="totalAllowedCostForRaOutpatientClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		
+    		<xsd:element name="totalAllowedCostForRaProfessionalClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		
+    		<xsd:element name="totalAllowedCostForRaPharmacyClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>    		
+    		
+    		<xsd:element name="totalPlanPaidAmountForRaInpatientClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		
+    		<xsd:element name="totalPlanPaidAmountForRaOutpatientClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		
+    		<xsd:element name="totalPlanPaidAmountForRaProfessionalClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		
+    		<xsd:element name="totalPlanPaidAmountForRaPharmacyClaims" minOccurs="0" maxOccurs="1">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:decimal">
+    					<xsd:minInclusive value="0"/>
+    					<xsd:maxInclusive value="999999999999.99"/>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>     		 
+    		
+			<xsd:element name="includedFormTypeCategory" type="vo:ClaimEnrolleeFrequencyFormTypeCategory" minOccurs="0" maxOccurs="unbounded"/>
+	    </xsd:sequence>
+    </xsd:complexType>
+ </xsd:schema>

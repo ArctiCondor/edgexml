@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/RARICommonOutboundFileHeader.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailCalendarYearCategory.xsd"/>
+    <xsd:element name="riskAdjustmentClaimSelectionDetailReport" type="impl:RiskAssessmentClaimSelectionDetailReport"/>
+	<xsd:complexType name="RiskAssessmentClaimSelectionDetailReport">
+        <xsd:sequence>
+        	<xsd:element name="includedFileHeader" type="vo:RARICommonOutboundFileHeader" minOccurs="1" maxOccurs="1" />
+        	<xsd:element name="includedCalendarYearCategory" type="vo:ClaimSelectionDetailCalendarYearCategory" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

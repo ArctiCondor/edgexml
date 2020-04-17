@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">	
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/radvse/radvSupplementalExtractDetailCategory.xsd"/>
+	<xsd:element name="includedSupplementalExtractPlan" type="impl:radvSupplementalExtractPlanCategory"/>
+	<xsd:complexType name="radvSupplementalExtractPlanCategory"> 
+		<xsd:sequence>			 
+			<xsd:element name="insurancePlanIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="16"/>						 						 					 
+					</xsd:restriction>
+				</xsd:simpleType>			
+			</xsd:element>
+			<xsd:element name="insurancePlanFileDetailTotalQuantity" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="includedSupplementalExtractDetail" type="vo:radvSupplementalExtractDetailCategory" minOccurs="0" maxOccurs="unbounded"/>	
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

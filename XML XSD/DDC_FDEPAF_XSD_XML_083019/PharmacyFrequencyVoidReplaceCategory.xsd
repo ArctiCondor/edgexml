@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"	 
+	elementFormDefault="qualified">
+	
+	<xsd:element name="includedPharmacyVoidReplaceCodeCategory" type="impl:PharmacyFrequencyVoidReplaceCategory"/>	
+	<xsd:complexType name="PharmacyFrequencyVoidReplaceCategory">
+		<xsd:sequence>	
+			<xsd:element name="voidReplaceCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">	
+						<xsd:length value="1"/>					 
+						<xsd:enumeration value="V"/>
+						<xsd:enumeration value="R"/>					 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+				 
+			<xsd:element name="totalCountVoidReplaceCode" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

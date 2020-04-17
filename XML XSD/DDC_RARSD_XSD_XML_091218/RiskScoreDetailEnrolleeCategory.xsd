@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailDiagnosisCodeCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailPaymentHccCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailSeverityLevelCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailHCCGroupCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailEnrolleeHccDroppedCategory.xsd"/>							
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailEnrolleePeriodCategory.xsd"/>								
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailNdcCodeCategory.xsd"/>								
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailPaymentRxcCategory.xsd"/>								
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailRxcToHccInteractionCategory.xsd"/>								
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailRxcCreatedByServiceCodeCategory.xsd"/>								
+	<xsd:include schemaLocation="../../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/riskscore/ratingarea/RiskScoreDetailEnrolleeRxcDroppedCategory.xsd"/>								
+	<xsd:element name="includedRiskScoreDetailEnrolleeCategory" type="impl:RiskScoreDetailEnrolleeCategory"/>
+	<xsd:complexType name="RiskScoreDetailEnrolleeCategory">
+        <xsd:sequence>
+			<xsd:element name="insuredMemberIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="80"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="enrolleeAge" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="riskAdjustmentAge" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+      					<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="applicableRAModel" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="10"/>
+						</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="gender" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="1"/>
+						<xsd:enumeration value=""/>
+						<xsd:enumeration value="M"/>
+						<xsd:enumeration value="F"/>
+						<xsd:enumeration value="U"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="includedDiagnosisCodeCategory" type="vo:RiskScoreDetailDiagnosisCodeCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedNdcCodeCategory" type="vo:RiskScoreDetailNdcCodeCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedPaymentHccCategory" type="vo:RiskScoreDetailPaymentHccCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedPaymentRxcCategory" type="vo:RiskScoreDetailPaymentRxcCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedSeverityLevelCategory" type="vo:RiskScoreDetailSeverityLevelCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedHccGroupCategory" type="vo:RiskScoreDetailHCCGroupCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedRxcToHccInteractionCategory" type="vo:RiskScoreDetailRxcToHccInteractionCategory" minOccurs="1" maxOccurs="unbounded"/> 
+			<xsd:element name="includedRxcCreatedByServiceCodeCategory" type="vo:RiskScoreDetailRxcCreatedByServiceCodeCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedEnrolleeRxcDroppedCategory" type="vo:RiskScoreDetailEnrolleeRxcDroppedCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedEnrolleeHccDroppedCategory" type="vo:RiskScoreDetailEnrolleeHccDroppedCategory" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="includedEnrolleePeriodCategory" type="vo:RiskScoreDetailEnrolleePeriodCategory" minOccurs="1" maxOccurs="unbounded"/>
+	    </xsd:sequence>
+    </xsd:complexType>
+ </xsd:schema>

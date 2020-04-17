@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+    <xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/RARICommonOutboundFileHeader.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ri/RiDetailEnrolleeReportEnrolleeCategory.xsd"/>
+	<xsd:element name="riDetailEnrolleeReport">
+	<xsd:complexType>
+        <xsd:sequence>
+			<xsd:element name="includedFileHeader" type="vo:RARICommonOutboundFileHeader" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="calendarYear" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		 	<xsd:element name="executionType" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="30"/>
+						<xsd:enumeration value="P"/>
+						<xsd:enumeration value="F"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="includedInsuredMemberIdentifier" type="vo:RiDetailEnrolleeReportEnrolleeCategory" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

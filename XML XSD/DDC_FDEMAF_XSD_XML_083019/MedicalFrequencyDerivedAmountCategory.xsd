@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"	 
+	elementFormDefault="qualified">	 
+	 
+	<xsd:element name="includedMedicalDerivedAmountIndicatorCategory" type="impl:MedicalFrequencyDerivedAmountCategory"/>	
+	<xsd:complexType name="MedicalFrequencyDerivedAmountCategory">
+		<xsd:sequence>				 
+			<xsd:element name="derivedAmountIndicator" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">	
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="1"/>	
+						<xsd:enumeration value=""/>				 
+						<xsd:enumeration value="Y"/>
+						<xsd:enumeration value="N"/>					 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 				 
+			 	 
+			<xsd:element name="totalCountDerivedAmountIndicatorClaimLevel" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalCountDerivedAmountIndicatorServiceLine" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			 		 
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

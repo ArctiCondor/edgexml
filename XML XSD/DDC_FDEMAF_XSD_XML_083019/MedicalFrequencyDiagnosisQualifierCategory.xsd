@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"	 
+	elementFormDefault="qualified">	 
+	 
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/fdemaf/MedicalFrequencyDiagnosisCodeCategory.xsd"/> 
+	<xsd:element name="includedMedicalDiagnosisQualifierCategory" type="impl:MedicalFrequencyDiagnosisQualifierCategory"/>	
+	<xsd:complexType name="MedicalFrequencyDiagnosisQualifierCategory">
+		<xsd:sequence>				 
+			<xsd:element name="diagnosisQualifier" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">	
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="2"/>
+						<xsd:enumeration value=""/>					 
+						<xsd:enumeration value="01"/>
+						<xsd:enumeration value="02"/>						 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+				 
+			<xsd:element name="includedMedicalDiagnosisCodeCategory" type="vo:MedicalFrequencyDiagnosisCodeCategory" minOccurs="0" maxOccurs="unbounded"/>	  
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

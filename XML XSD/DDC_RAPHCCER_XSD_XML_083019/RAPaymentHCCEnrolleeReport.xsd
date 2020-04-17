@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">	
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/RARICommonOutboundFileHeader.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/rapaymenthccenrollee/RAPaymentHCCEnrolleeReportCountsCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/rapaymenthccenrollee/RAPaymentHCCEnrolleeReportFormTypeCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/rapaymenthccenrollee/RAPaymentHCCEnrolleeReportPlanCategory.xsd"/>
+	<xsd:element name="raPaymentHCCEnrolleeReport" type="impl:RAPaymentHCCEnrolleeReport"/>
+	<xsd:complexType name="RAPaymentHCCEnrolleeReport">
+		<xsd:sequence>
+			<xsd:element name="includedFileHeader" type="vo:RARICommonOutboundFileHeader" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="calendarYear" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="4"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="state" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>	
+						<xsd:maxLength value="2"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			<xsd:element name="totalMemberMonthsEnrolleePmtHCC" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numberOfEnrolleesPmtHCC" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="totalAllowedAmountRAPmtHCCEnr" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="totalPaidAmountRAPmtHCCEnr" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="0"/>
+	      				<xsd:maxInclusive value="999999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="raDiagnosesPerRAHCCEnr" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:minInclusive value="0"/>
+	      				<xsd:maxInclusive value="999999999.99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			<xsd:element name="includedCountsCategory" type="vo:RAPaymentHCCEnrolleeReportCountsCategory" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="includedFormTypeCategory" type="vo:RAPaymentHCCEnrolleeReportFormTypeCategory" minOccurs="2" maxOccurs="2"/>
+			<xsd:element name="includedPlanCategory" type="vo:RAPaymentHCCEnrolleeReportPlanCategory" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

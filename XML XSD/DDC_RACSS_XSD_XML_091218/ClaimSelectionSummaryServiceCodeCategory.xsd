@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+    <xsd:element name="includedServiceCodeCategory" type="impl:ClaimSelectionSummaryServiceCodeCategory" />
+	<xsd:complexType name="ClaimSelectionSummaryServiceCodeCategory">
+        <xsd:sequence>
+        	<xsd:element name="serviceCode" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="80"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+        	<xsd:element name="claimsIncluded" minOccurs="0" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>           	
+        	</xsd:element>        	
+        	<xsd:element name="claimsExcluded" minOccurs="0" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>     
+        	</xsd:element>
+        </xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

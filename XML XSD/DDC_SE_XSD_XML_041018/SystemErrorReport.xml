@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgeServerErrorStatus xmlns="http://vo.edge.fm.cms.hhs.gov">
+	<commonSystemErrorHeader>
+		<outboundFileIdentifier>3762b091-0a88-4a01-98a7-65fea5372236</outboundFileIdentifier>
+		<outboundFileGenerationDateTime>2019-01-20T16:27:20</outboundFileGenerationDateTime>
+		<edgeServerVersion>29.0.0.18</edgeServerVersion>
+		<outboundFileTypeCode>SE</outboundFileTypeCode>
+		<edgeServerIdentifier>151981</edgeServerIdentifier>
+		<issuerID>21663</issuerID>
+	</commonSystemErrorHeader>
+	<systemErrorType>
+		<errorCode>100</errorCode>
+		<errorCategory>JVM</errorCategory>
+		<errorDescription>Java heap OutOfMemory error</errorDescription>
+	</systemErrorType>
+</edgeServerErrorStatus>

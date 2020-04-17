@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	
+	<xsd:element name="riskScoreSummaryPlanPaymentHccCategory" type="impl:RiskScoreSummaryPlanPaymentHccCategory"/>
+	<xsd:complexType name="RiskScoreSummaryPlanPaymentHccCategory">
+    	<xsd:sequence>
+		    <xsd:element name="paymentHcc" minOccurs="1" maxOccurs="1" >
+		        <xsd:simpleType>
+		            <xsd:restriction base="xsd:string">
+		                <xsd:minLength value="0"/>
+		                <xsd:maxLength value="10"/>
+		           </xsd:restriction>
+		       </xsd:simpleType>
+		    </xsd:element>
+		    <xsd:element name="numberOfUniqueRaUsersWHcc" maxOccurs="1" minOccurs="1">
+		    	<xsd:simpleType>
+		    	    <xsd:restriction base="xsd:integer">
+		    			<xsd:minInclusive value="0"/>
+		    			<xsd:maxInclusive value="999999999"/>
+		    	   </xsd:restriction>
+		      </xsd:simpleType>
+		    </xsd:element>		   
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

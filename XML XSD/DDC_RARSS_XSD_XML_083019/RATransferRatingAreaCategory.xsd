@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	xmlns:tns="http://www.example.org/PaymentTransfer"
+	elementFormDefault="qualified">
+	
+	<xsd:element name="raTransferRatingAreaCategory" type="impl:RATransferRatingAreaCategory"/>	
+	<xsd:complexType name="RATransferRatingAreaCategory"> 
+		<xsd:sequence>
+			 <xsd:element name="ratingArea" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">									 
+						<xsd:maxLength value="3"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			 <xsd:element name="enrolleeMemberMonths" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+							 
+	 		<xsd:element name="enrolleeBillableMonths" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+						
+			<xsd:element name="enrolleeSubscriberMonths" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>				 
+						
+			<xsd:element name="planLiabilityRiskScore" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+				 		
+			<xsd:element name="planAllowableRatingFactor" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+						
+			<xsd:element name="planAveragePi" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+						
+			<xsd:element name="planAgeAvePremium" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:fractionDigits value="15"/>
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999.999999999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>		
+		</xsd:sequence>
+	</xsd:complexType>	
+</xsd:schema>	

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"	 
+	elementFormDefault="qualified">
+	
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/EnrolleeClaimsWithWithoutDetailEnrolleeCategory.xsd"/>
+	<xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/EnrolleeClaimsWithWithoutDetailClaimCategory.xsd"/>
+	<xsd:element name="includedPlanIdentifier" type="impl:EnrolleeClaimsWithWithoutDetailPlanCategory"/>	
+	<xsd:complexType name="EnrolleeClaimsWithWithoutDetailPlanCategory">
+		<xsd:sequence>	
+			<xsd:element name="planIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="16"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			 
+					
+			<xsd:element name="totalNumberOfActiveEnrollmentRecords" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalNumberOfStoredActiveClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="totalNumberEnrolleesWithLinkedClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+					
+			<xsd:element name="totalNumberEnrolleelinkClaimFlaggedRaClaimSelection" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			
+			<xsd:element name="totalNumberOfEnrolleesNoLinkedClaims" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>	
+			
+			<xsd:element name="totalNumberOfClaimsNoLinkedEnrolleeID" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">						 
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			 
+			
+			<xsd:element name="includedEnrolleeWithout" type="vo:EnrolleeClaimsWithWithoutDetailEnrolleeCategory" minOccurs="1" maxOccurs="1"/>			
+		
+			<xsd:element name="includedClaimWithout" type="vo:EnrolleeClaimsWithWithoutDetailClaimCategory" minOccurs="1" maxOccurs="1"/>			
+		</xsd:sequence>
+	</xsd:complexType>	
+</xsd:schema>

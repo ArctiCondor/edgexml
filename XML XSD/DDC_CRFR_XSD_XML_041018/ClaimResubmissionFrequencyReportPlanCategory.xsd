@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/claimresubmissionfrequency/ClaimResubmissionFrequencyReportCalendarMonthCategory.xsd"/>
+	<xsd:element name="includedPlanCategory" type="impl:ClaimResubmissionFrequencyReportPlanCategory"/>
+	<xsd:complexType name="ClaimResubmissionFrequencyReportPlanCategory">
+        <xsd:sequence>
+			<xsd:element name="planIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>	
+						<xsd:maxLength value="14"/>						 					 
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element> 
+			<xsd:element name="includedCalendarMonthCategory" type="impl:ClaimResubmissionFrequencyReportCalendarMonthCategory" minOccurs="1" maxOccurs="12"/>
+	    </xsd:sequence>
+    </xsd:complexType>
+ </xsd:schema>

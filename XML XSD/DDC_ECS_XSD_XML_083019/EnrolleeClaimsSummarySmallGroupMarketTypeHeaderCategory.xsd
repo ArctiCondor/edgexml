@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	xmlns:vo="http://vo.edge.fm.cms.hhs.gov"
+	xmlns:tns="http://www.example.org/PaymentTransfer"
+	elementFormDefault="qualified">	
+	 
+	<xsd:element name="includedSmallGroupMarketTypeHeader" type="impl:EnrolleeClaimsSummarySmallGroupMarketTypeHeaderCategory"/>
+	<xsd:complexType name="EnrolleeClaimsSummarySmallGroupMarketTypeHeaderCategory">
+		<xsd:sequence>
+			<xsd:element name="uniqueEnrollees" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesLinkedOnlyToRxClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesLinkedOnlyToMedicalClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesLinkedToMedicalAndRxClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="enrolleesWithNoLinkedClaims" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="rxClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="medicalClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="orphanRxClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="orphanMedicalClaimsPaidAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="subscriberPremiumAmount" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+					 		<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999999.99"/>
+					 	</xsd:restriction>
+					 </xsd:simpleType>
+			</xsd:element>			 
+		</xsd:sequence>
+	</xsd:complexType>	
+</xsd:schema>

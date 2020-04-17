@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://vo.edge.fm.cms.hhs.gov"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:impl="http://vo.edge.fm.cms.hhs.gov" 
+	elementFormDefault="qualified">
+    <xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailBillTypeCategory.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailServiceCodeCategory.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailReasonCodeCategory.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailPharmacyClaimCategory.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailUnlinkedSupplementalCategory.xsd"/>
+    <xsd:include schemaLocation="../../../../../../../xsd/gov/hhs/cms/fm/edge/vo/ClaimSelectionDetailMedicalClaimCategory.xsd"/>
+    <xsd:element name="includedPlanCategory" type="impl:ClaimSelectionDetailPlanCategory"/>
+	<xsd:complexType name="ClaimSelectionDetailPlanCategory">
+		<xsd:sequence>
+        	<xsd:element name="planIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="16"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+        	<xsd:element name="totalEnrollees" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="medicalClaimsIncluded" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="medicalClaimsExcluded" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="supplementalRecordsIncluded" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="supplementalRecordsExcluded" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="totalEnrolleesWRaEligibleclaims" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="pharmacyClaimsIncluded" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="pharmacyClaimsExcluded" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="totalUniqueNDC" minOccurs="1" maxOccurs="1">
+        		<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="999999999"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+        	</xsd:element>
+        	<xsd:element name="includedBilltypeCategory" type="impl:ClaimSelectionDetailBillTypeCategory" minOccurs="1" maxOccurs="unbounded"/>
+        	<xsd:element name="includedServiceCodeCategory" type="impl:ClaimSelectionDetailServiceCodeCategory" minOccurs="1" maxOccurs="unbounded"/>
+        	<xsd:element name="includedReasonCodeCategory" type="impl:ClaimSelectionDetailReasonCodeCategory" minOccurs="1" maxOccurs="unbounded"/>
+        	<xsd:element name="includedPharmacyClaimCategory" type="impl:ClaimSelectionDetailPharmacyClaimCategory" minOccurs="1" maxOccurs="unbounded"/>
+        	<xsd:element name="includedUnlinkedSupplementalCategory" type="impl:ClaimSelectionDetailUnlinkedSupplementalCategory" minOccurs="1" maxOccurs="unbounded"/>
+        	<xsd:element name="includedMedicalClaimCategory" type="impl:ClaimSelectionDetailMedicalClaimCategory" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
